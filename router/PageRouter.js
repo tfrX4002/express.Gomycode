@@ -14,7 +14,7 @@ const openCloseServices = (req, res, next) => {
             next()
         }
     }
-    res.status(200).render('services_unavailable.ejs', { title : 'Close'})
+    res.status(200).render('ser_not_avail.ejs', { title : 'Close'})
 }
 
 router.use(openCloseServices)
@@ -22,19 +22,19 @@ router.use(openCloseServices)
 //routes
 
 router.get('/', (req, res) => {
-    res.status(200).render('index.ejs', { title : 'welcome to GoMyCode' })
+    res.status(200).render('index.ejs', { title : 'welcome to RyanFT' })
 })
 
-router.get('/services', (req, res) => {
+router.get('/service', (req, res) => {
     res.status(200).render('services.ejs', { title : 'take advantage of our services ' })
 })
 
-router.get('/contacts', (req, res) => {
-    res.status(200).render('contacts.ejs', { title : 'join us' })
+router.get('/contact', (req, res) => {
+    res.status(200).render('contact.ejs', { title : 'join us' })
 })
 
 router.use((req, res) => {
-    res.status(404).render('404.ejs', { title : 'Error'})
+    res.status(404).render('errorPage.ejs', { title : 'Error'})
 })
 
 module.exports = router
